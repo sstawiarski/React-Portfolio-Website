@@ -1,26 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
+import Navigation from './Components/Navigation';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Home from './Pages/Home';
+import About from './Pages/About';
+import Projects from './Pages/Projects';
+import Resume from './Pages/Resume';
+import Container from 'react-bootstrap/Container';
+import { TitleComponent } from './Components/TitleComponent'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+class App extends React.Component {
+
+  render() {
+    return (
+      <BrowserRouter>
+        <TitleComponent title="Shawn Stawiarski | Software Engineer" />
+        <Container>
+          <div>
+            <Navigation />
+            <Switch>
+              <Route path="/" component={Home} exact />
+              <Route path="/contact" component={About} />
+              <Route path="/projects" component={Projects} />
+              <Route path="/resume" component={Resume} />
+            </Switch>
+          </div>
+          <footer>
+            <p>Copyright &copy; 2020 Shawn Stawiarski</p>
+          </footer>
+        </Container>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
