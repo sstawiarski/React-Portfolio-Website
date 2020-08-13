@@ -4,19 +4,20 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Cards from '../Components/Cards';
+import Container from 'react-bootstrap/Container';
 
 const home = () => {
     return (
         <div>
             <Jumbotron>
+                <Container fluid="sm">
                 <Row>
                     <Col>
-                        <div>
+                        <div id="image-container">
                             <img id="picture" src="https://avatars1.githubusercontent.com/u/38707588?s=400&u=11c732eb47e3fd305345d6d6875abf918304d912&v=4" alt="Shawn Stawiarski" />
-                        </div>
-                        <div id="name">
+                        
                             <h1>Shawn Stawiarski</h1>
-                            <h2 id="job-title">Software Engineer</h2>
+                            <h4 id="job-title">Software Engineer</h4>
                             <h5 id="location-info">
                                 <p>Pittsburgh, PA</p>
                             </h5>
@@ -25,8 +26,8 @@ const home = () => {
                             </h6>
                         </div>
                     </Col>
-                    <Col>
-                        <div id="info">
+                    <Col id="info">
+
                             <p>
                                 Hi, my name is Shawn Stawiarski. I am a Software Engineering student at Arizona State University. I am on track to graduation in Spring 2021.
                     </p>
@@ -34,9 +35,10 @@ const home = () => {
                                 Throughout my studies, I have primarily worked with
                                 Java, though some other languages such as C/C++ and database systems like MySQL were common in my program. I have been attempting to learn more frontend development, including JavaScript/TypeScript and JS frameworks like NodeJS, Express, and React.
                     </p>
-                        </div>
+
                     </Col>
                 </Row>
+                </Container>
             </Jumbotron>
 
             <div>
